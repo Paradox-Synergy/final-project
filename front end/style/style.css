@@ -1,0 +1,86 @@
+.titolino{
+    color: white;
+    font-size: 100px;
+    border-style: solid;
+    padding-bottom: 50px;
+    margin: 0;
+    position: relative;
+    height: 80px;
+    text-align: center;
+    background-color: rgba(5, 5, 51, 0.651);;
+    animation-name: example;
+    animation-duration: 20s;
+}
+
+.arrotondati{
+    border-radius: 10px;
+    padding: 8px;
+    padding: 10px;
+}
+#login{
+    position: relative;
+    font-size: 60px;
+    background-color: rgba(255, 255, 255, 0.658);
+    margin: 10% auto;
+    width: 400px;
+}
+
+#login > * {
+    margin: 15px;
+}
+
+.center {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.corsivo{
+    font-style: italic;
+}
+
+.grassetto{
+    font-weight: bolder;
+    color: azure;
+    
+}
+
+.bordi{
+    margin-top: 10px;
+    border: 3px solid darkblue;
+    padding-bottom: 10px;
+}
+
+.bordi:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 3px solid darkblue;
+    display: flex;
+    
+  }
+.img {
+    float: left;
+    padding: 100px;
+}
+
+#login > * {
+    width: 300px;
+    height: 30px;
+  }
+
+.paddi{
+    padding: 50px;
+}
+
+body {
+    background-image: URL("informaticainazienda_idee.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
