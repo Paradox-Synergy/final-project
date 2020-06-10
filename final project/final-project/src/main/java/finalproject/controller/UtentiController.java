@@ -13,25 +13,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import finalproject.controller.generics.GenericCrudController;
+import finalproject.entities.Dipendente;
 import finalproject.entities.Utente;
 import finalproject.entities.Utente;
-import finalproject.repositories.CrudDipendente;
-import finalproject.repositories.CrudUtente;
+import finalproject.repositories.DipendenteRepository;
+import finalproject.repositories.UtenteRepository;
 
 @RestController
 @RequestMapping("/utenti")
 public class UtentiController /*extends GenericCrudController<Utente, CrudUtente>*/ {
 
 	@Autowired
-	private CrudUtente db;
+	private UtenteRepository db;
 	
 	@GetMapping
 	public Iterable<Utente> getAll() {
 		return db.findAll();		
 	}
 	@GetMapping("/{id}")
-	public Optional<Utente> get(@PathVariable int id) {
-		return db.findById(id);
+	public Object get(@PathVariable int id) {
+		Optional<Utente> utente = db.findById(id);
+		
+		if (!utente.isPresent())
+			return "ERRORE: nessun utente trovato all'id: "+id;
+		return utente.get();
 	}
 	
 	@PostMapping

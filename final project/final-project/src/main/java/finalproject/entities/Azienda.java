@@ -1,15 +1,13 @@
 package finalproject.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import finalproject.entities.generics.JPAEntity;
 
@@ -23,10 +21,11 @@ public class Azienda extends JPAEntity {
 	private String email;
 	private String nTel;
 
-	@JsonIgnore
+	@JsonIgnoreProperties("azienda")
 	@OneToMany(
 			mappedBy = "azienda",
-			orphanRemoval = true
+			orphanRemoval = true,
+			fetch = FetchType.EAGER
 	)
 	private List<Dipendente> dipendenti;
 

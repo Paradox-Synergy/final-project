@@ -25,7 +25,7 @@ import finalproject.entities.generics.JPAEntity;
  */
 
 @MappedSuperclass
-@RestController
+//@RestController
 public abstract class GenericCrudController<T extends JPAEntity, I extends CrudRepository<T, Integer>> {
 
 	String directory;

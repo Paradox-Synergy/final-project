@@ -4,27 +4,33 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.server.EntityResponse;
 
 import finalproject.controller.generics.GenericCrudController;
 import finalproject.entities.Dipendente;
-import finalproject.repositories.CrudDipendente;
+import finalproject.repositories.DipendenteRepository;
+import javassist.NotFoundException;
 
 @SuppressWarnings("unused")
 @RestController
 @RequestMapping("/dipendenti")
-public class DipendentiController /*extends GenericCrudController<Dipendente, CrudDipendente>*/ {
+public class DipendentiController {
 
 	@Autowired
-	private CrudDipendente db;
+	private DipendenteRepository db;
 	
 	@GetMapping
 	public Iterable<Dipendente> getAll() {
-		System.out.println("PROVA PROVA PROVA");
-		return db.findAll();		
+		return db.findAll();
 	}
 	@GetMapping("/{id}")
-	public Optional<Dipendente> get(@PathVariable int id) {
-		return db.findById(id);
+	public Object get(@PathVariable int id) {
+		Optional<Dipendente> dipendente = db.findById(id);
+		
+		if (!dipendente.isPresent())
+			return "ERRORE: nessun dipendente trovato all'id: "+id;
+		
+		return dipendente.get();
 	}
 	
 	@PostMapping
@@ -33,7 +39,7 @@ public class DipendentiController /*extends GenericCrudController<Dipendente, Cr
 			db.save(d);
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public void delete(@PathVariable int id) {
 		db.deleteById(id);
 	}

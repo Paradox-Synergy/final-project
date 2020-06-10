@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import finalproject.controller.generics.GenericCrudController;
 import finalproject.entities.Azienda;
-import finalproject.repositories.CrudAzienda;
+import finalproject.entities.Dipendente;
+import finalproject.repositories.AziendaRepository;
 
 @SuppressWarnings("unused")
 @RestController
@@ -15,15 +16,20 @@ import finalproject.repositories.CrudAzienda;
 public class AziendeController /*extends GenericCrudController<Azienda, CrudAzienda>*/ {
 
 	@Autowired
-	private CrudAzienda db;
+	private AziendaRepository db;
 	
 	@GetMapping
 	public Iterable<Azienda> getAll() {
 		return db.findAll();		
 	}
 	@GetMapping("/{id}")
-	public Optional<Azienda> get(@PathVariable int id) {
-		return db.findById(id);
+	public Object get(@PathVariable int id) {
+		Optional<Azienda> azienda = db.findById(id);
+		
+		if (!azienda.isPresent())
+			return "ERRORE: nessuna azienda trovata all'id: "+id;
+		
+		return azienda.get();
 	}
 	
 	@PostMapping
@@ -32,7 +38,7 @@ public class AziendeController /*extends GenericCrudController<Azienda, CrudAzie
 			db.save(d);
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public void delete(@PathVariable int id) {
 		db.deleteById(id);
 	}

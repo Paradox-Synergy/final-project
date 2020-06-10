@@ -12,7 +12,7 @@ public class Utente extends JPAEntity {
 	private String userName = "Username";
 	private String email = "user.name@aigi.it";
 	private String password = "00000000";
-	private String pswReminder = "8-0";
+	private String pswReminder = "8t0";
 	
 	public Utente(int id, String userName, String email, String password, String pswReminder) {
 		super(id);

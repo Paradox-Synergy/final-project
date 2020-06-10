@@ -2,14 +2,13 @@ package finalproject.entities;
 
 import java.time.LocalDate;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import finalproject.entities.generics.JPAEntity;
 
@@ -25,7 +24,8 @@ public class Dipendente extends JPAEntity {
 	private LocalDate dataAssunzione;
 	private String ruolo;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("dipendenti")
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idAzienda")
 	private Azienda azienda;
 	
