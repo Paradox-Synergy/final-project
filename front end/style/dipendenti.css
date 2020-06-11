@@ -1,0 +1,48 @@
+#detail {
+    width:600px; /* valori ipotetici, da fixare */
+    height: 431px;
+    padding: 30px 35px;
+
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    
+}
+#detail .datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#profile-picture {
+    box-sizing: border-box;
+    width: 100px;
+}
+.image img {
+    object-fit: cover;
+    transition: object-fit 1s;
+}
+.image {
+    height: 0;
+    padding: 0 0 100% 0;
+}
+.data{
+    background-color: whitesmoke;
+}
+.data div{
+    border-bottom: thin solid black;
+    padding-bottom: 1px;
+}
+#detail .double-border {
+    border-radius: 10px;
+}
+#detail .double-border::before {
+    border-radius: 5px;
+}
+
+
+#body {
+    display: flex;
+    justify-content: space-around;
+}

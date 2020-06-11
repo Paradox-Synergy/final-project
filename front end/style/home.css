@@ -1,0 +1,64 @@
+#login,
+#login-effettuato,
+#home {
+    border: 3px solid darkblue;
+    width: 600px;
+    height: 371px;
+
+    margin: 35px auto;
+}
+/* le seguenti sono sovrascritture delle misure impostate nel basic */
+#login * {    
+    border-radius: 10px;
+}
+#login input {
+    width: 300px;
+    height: 35px;
+}
+#login .title {
+    font-weight: 750;
+    font-size: 60px;
+    width: 350px;    
+}
+#login div > * {
+    width: initial;
+    height: initial;
+
+    padding: 5px;
+}
+
+#login-effettuato {
+    justify-self: center;
+}
+
+.label {
+    border: thin solid #47525E;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 5px 10px black;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+#home .title {
+    padding: 20px;
+
+    font-size: 50px;
+    font-weight: bold;
+}
+#home div{
+    padding: 0;
+
+    width: 100%;
+    height: 500px;
+}
+
+.box button{    
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+
+    font-weight: bold;
+}
+p {
+    padding: 10px;
+}

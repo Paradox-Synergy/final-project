@@ -1,0 +1,141 @@
+body {
+    background-color: blue;
+    background: URL("../img/informaticainazienda_idee.gif") no-repeat center fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+#header {
+    border: thick solid #3400fe;
+    position: sticky;
+    width: 100%;
+    background-color: rgba(5, 5, 51, 0.651);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#header img {    
+    position: absolute;
+    left: 2%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 3px solid #3400fe;
+    border-radius: 50%;
+    background: white;
+}
+#header h1 { /*css del testo, NON del contenitore*/
+    color: white;
+    font-size: 100px;
+    padding: 10px;
+    margin: 0;
+}
+
+.flex-column {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.double-border {
+    position: relative;
+
+    border: 3px solid darkblue;
+    border-radius: 0px;
+}
+.double-border:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 3px solid darkblue;
+}
+
+.italic{
+    font-style: italic;
+}
+.bold{
+    font-weight: bold;    
+}
+.info {
+    font-size: 120%;
+    font-style: italic;
+    color: #47525E;
+}
+.error {
+    font-size: 130%;
+    font-weight: bold;
+    color: red;
+}
+.round-border{
+    border-radius: 10px;
+}
+.hidden {
+    display:none;
+}
+
+.box {
+    position: relative;
+
+    background-color: rgba(255, 255, 255, 0.85);
+    border: thick solid darkblue;
+
+    width: 400px;
+    max-width: 80%;
+    min-height: 300px;
+
+    margin: 10px;
+    padding: 50px;
+}
+.box input {
+    min-width: fit-content;
+    width: 50%;
+}
+.box button {
+    min-width: fit-content;
+    width: 45%;
+    
+    border-radius: 5px;
+
+    background-color: #47525E;
+    color: white;
+}
+.box * {
+    margin: 0;
+    box-sizing: border-box;
+    
+    min-height: fit-content; /* 35px solitamente è ragionevole */
+
+    z-index: 1;
+}
+.box .title {
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 30px;
+
+    min-width: fit-content;
+    width: 60%;
+    height: auto;
+
+    padding: 10px 30px;
+
+    color: #47525E;
+    background-color: #ffffff;
+    border: 3px solid #47525E;
+}
+.box div.flex-column {
+    justify-content: space-between;
+}
+
+img {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 200px;
+    max-height: 200px;
+}
