@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/basic_style.css">
+
+    <title>Home</title>
+    <link rel="stylesheet" href="../style/home.css">
+    <script src="../javascript/home.js"></script>
+</head>
+<body>
+
+    <div id="header">
+        <img src="../img/LOGO1.png">
+        <h1 class="italic">NOPLAY</h1>
+
+    </div>
+       
+    <div id="login" class="box double-border flex-column">    
+        <h3 class="title">Login</h3>
+        <p class="info">Effettua il login per accedere ai contenuti</p>
+        <p class="error hidden">Qualcosa è andato storto, inserisci nuovamente i tuoi dati</p>
+        <input type="text" name="username" placeholder="Username or E-mail">
+        <input type="password" name="password" placeholder="Password">
+        <div class="hidden">
+            <input type="checkbox" name="hint" id="hint">
+            <label for="hint" class="label">Suggerimento</label>
+        </div>
+        <button>LOG IN</button>    
+    </div>
+
+    <div id="login-effettuato" class="box double-border flex-column hidden">
+        <h3 class="title">Benvenuto Utente!</h3>
+        <p class="italics label">Login effettuato correttamente!</p>
+        <button>HOMEPAGE</button>
+    </div>
+
+    <div id="home" class="box double-border flex-column hidden">
+        <h1 class="title">HOMEPAGE</h1>
+        <p class="italic bold">Cosa vuoi fare?</p>
+        <div class="flex-column">
+            <button>RISORSE INTERNE</button>
+            <button>AZIENDE CLIENTI</button>
+            <button>PROFILO</button>
+            <button>LOGOUT</button>
+        </div>
+    </div>
+    
+</body>
+</html>
