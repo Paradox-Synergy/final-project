@@ -4,6 +4,9 @@ body {
     background-size: cover;
     margin: 0;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 
 #header {
     border: thick solid #3400fe;
@@ -87,7 +90,7 @@ body {
 
     width: 400px;
     max-width: 80%;
-    min-height: 300px;
+    min-height: fit-content;
 
     margin: 10px;
     padding: 50px;
@@ -139,3 +142,4 @@ img {
     max-width: 200px;
     max-height: 200px;
 }
+
