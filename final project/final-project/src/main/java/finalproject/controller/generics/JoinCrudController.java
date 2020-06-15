@@ -14,18 +14,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import finalproject.entities.keys.CompositeKey;
 import finalproject.entities.superclasses.JPAEntity;
+import finalproject.entities.superclasses.JoinEntity;
 
 /**
  * 
  * @author Paradox
  *
- * @param <T> La classe che estende la JPAEntity di cui si deve operare il controllo
+ * @param <T> La classe che estende la JoinEntity di cui si deve operare il controllo
  * @param <I> l'interfaccia creata per quella entity, estensione di CrudRepository<Entity, Integer>
  */
 
 @MappedSuperclass
-public abstract class GenericCrudController<T extends JPAEntity, I extends CrudRepository<T, Integer>> {
+public abstract class JoinCrudController<T extends JoinEntity, I extends CrudRepository<T, CompositeKey>> {
 
 	String tName = ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0].toString();
 	{
@@ -45,8 +47,9 @@ public abstract class GenericCrudController<T extends JPAEntity, I extends CrudR
 	public Iterable<T> getAll() {
 		return db.findAll();		
 	}
-	@GetMapping("/{id}")
-	public Object get(@PathVariable int id) {
+	@GetMapping("/{id1}-{id2}")
+	public Object get(@PathVariable int id1, @PathVariable int id2) {
+		CompositeKey id = new CompositeKey(id1, id2);
 		Optional<T> obj = db.findById(id);
 		
 		if (obj.isPresent())
@@ -57,7 +60,8 @@ public abstract class GenericCrudController<T extends JPAEntity, I extends CrudR
 	
 	@PostMapping
 	public String add(@RequestBody T obj) {
-		if (obj.getId() == 0) {
+		CompositeKey id = obj.getId();
+		if (id == null || id.getId1() == 0 || id.getId2() == 0) {
 			db.save(obj);
 			return jsonMessage("Added new "+tName);
 		}
@@ -65,7 +69,8 @@ public abstract class GenericCrudController<T extends JPAEntity, I extends CrudR
 	}
 	
 	@DeleteMapping("/{id}")
-	public String delete(@PathVariable int id) {
+	public String delete(@PathVariable int id1, @PathVariable int id2) {
+		CompositeKey id = new CompositeKey(id1, id2);
 		if (db.findById(id).isPresent()) {
 			db.deleteById(id);
 			return executed("deleted", id);
@@ -82,11 +87,11 @@ public abstract class GenericCrudController<T extends JPAEntity, I extends CrudR
 		return idNotFound(obj.getId());
 	}
 	
-	private String executed(String action, int id) {
-		return jsonMessage("Element at id:"+id+" "+action);
+	private String executed(String action, CompositeKey id) {
+		return jsonMessage("Element at composite id:"+id.getCompositeId().toString()+action);
 	}
-	private String idNotFound(int id) {
-		return jsonError("no "+tName+" found at id: "+id);
+	private String idNotFound(CompositeKey id) {
+		return jsonError("no "+tName+" found at composite id: "+id.getCompositeId());
 	}
 	public String jsonError(String error) {
 		return "{\n"

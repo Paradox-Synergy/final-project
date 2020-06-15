@@ -3,16 +3,16 @@ package finalproject.entities;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import finalproject.entities.generics.JPAEntity;
+import finalproject.entities.superclasses.JPAEntity;
 
 @Entity(name = "Utente")
 @Table(name = "utenti")
 public class Utente extends JPAEntity {
 
-	private String userName = "Username";
-	private String email = "user.name@aigi.it";
-	private String password = "00000000";
-	private String pswReminder = "8t0";
+	private String userName;	//"Username"
+	private String email;		//"user.name@aigi.it"
+	private String password;	//"00000000"
+	private String pswReminder;	//"8t0"
 	
 	public Utente(int id, String userName, String email, String password, String pswReminder) {
 		super(id);

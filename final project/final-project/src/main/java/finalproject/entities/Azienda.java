@@ -1,6 +1,7 @@
 package finalproject.entities;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,7 +10,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import finalproject.entities.generics.JPAEntity;
+import finalproject.entities.superclasses.JPAEntity;
 
 @Entity(name = "Azienda")
 @Table(name = "aziende")
@@ -26,11 +27,11 @@ public class Azienda extends JPAEntity {
 			mappedBy = "azienda",
 			orphanRemoval = true,
 			fetch = FetchType.EAGER
-	)
-	private List<Dipendente> dipendenti;
+			)
+	private Set<Dipendente> dipendenti;
 
 	public Azienda(int id, String ragioneSociale, String partitaIva, String indirizzo, String email, String nTel,
-			List<Dipendente> dipendenti) {
+			Set<Dipendente> dipendenti) {
 		super(id);
 		this.ragioneSociale = ragioneSociale;
 		this.partitaIva = partitaIva;
@@ -84,11 +85,11 @@ public class Azienda extends JPAEntity {
 		this.nTel = nTel;
 	}
 
-	public List<Dipendente> getDipendenti() {
+	public Set<Dipendente> getDipendenti() {
 		return dipendenti;
 	}
 
-	public void setDipendenti(List<Dipendente> dipendenti) {
+	public void setDipendenti(Set<Dipendente> dipendenti) {
 		this.dipendenti = dipendenti;
 	}
 	

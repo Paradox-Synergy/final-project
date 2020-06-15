@@ -19,40 +19,41 @@ import finalproject.entities.Utente;
 import finalproject.repositories.DipendenteRepository;
 import finalproject.repositories.UtenteRepository;
 
+@SuppressWarnings("unused")
 @RestController
 @RequestMapping("/utenti")
-public class UtentiController /*extends GenericCrudController<Utente, CrudUtente>*/ {
+public class UtentiController extends GenericCrudController<Utente, UtenteRepository> {
 
-	@Autowired
-	private UtenteRepository db;
-	
-	@GetMapping
-	public Iterable<Utente> getAll() {
-		return db.findAll();		
-	}
-	@GetMapping("/{id}")
-	public Object get(@PathVariable int id) {
-		Optional<Utente> utente = db.findById(id);
-		
-		if (!utente.isPresent())
-			return "ERRORE: nessun utente trovato all'id: "+id;
-		return utente.get();
-	}
-	
-	@PostMapping
-	public void add(@RequestBody Utente d) {
-		if (d.getId() == 0)
-			db.save(d);
-	}
-	
-	@DeleteMapping
-	public void delete(@PathVariable int id) {
-		db.deleteById(id);
-	}
-	
-	@PutMapping
-	public void update(@RequestBody Utente d) {
-		if (db.findById(d.getId()).isPresent())
-			db.save(d);
-	}
+//	@Autowired
+//	private UtenteRepository db;
+//	
+//	@GetMapping
+//	public Iterable<Utente> getAll() {
+//		return db.findAll();		
+//	}
+//	@GetMapping("/{id}")
+//	public Object get(@PathVariable int id) {
+//		Optional<Utente> utente = db.findById(id);
+//		
+//		if (!utente.isPresent())
+//			return "ERRORE: nessun utente trovato all'id: "+id;
+//		return utente.get();
+//	}
+//	
+//	@PostMapping
+//	public void add(@RequestBody Utente d) {
+//		if (d.getId() == 0)
+//			db.save(d);
+//	}
+//	
+//	@DeleteMapping
+//	public void delete(@PathVariable int id) {
+//		db.deleteById(id);
+//	}
+//	
+//	@PutMapping
+//	public void update(@RequestBody Utente d) {
+//		if (db.findById(d.getId()).isPresent())
+//			db.save(d);
+//	}
 }

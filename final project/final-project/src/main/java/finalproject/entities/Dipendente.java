@@ -1,16 +1,19 @@
 package finalproject.entities;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import finalproject.entities.generics.JPAEntity;
+import finalproject.entities.superclasses.JPAEntity;
 
 @Entity(name = "Dipendente")
 @Table(name = "personale")
@@ -24,13 +27,30 @@ public class Dipendente extends JPAEntity {
 	private LocalDate dataAssunzione;
 	private String ruolo;
 	
+	@JsonIgnoreProperties("dipendente")
+	@OneToMany(
+			mappedBy = "dipendente",
+			orphanRemoval = true,
+			fetch = FetchType.EAGER
+			)
+	private Set<CompetenzaPersonale> competenze;
+	
+	@JsonIgnoreProperties("dipendente")
+	@OneToMany(
+			mappedBy = "certificato",
+			orphanRemoval = true,
+			fetch = FetchType.EAGER
+			)
+	private Set<CertificatoPersonale> certificati;
+	
 	@JsonIgnoreProperties("dipendenti")
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "idAzienda")
+	@JoinColumn(name = "id_azienda")
 	private Azienda azienda;
-	
+
 	public Dipendente(int id, String nome, String cognome, String foto, LocalDate ddn, int stipendio,
-			LocalDate dataAssunzione, String ruolo, Azienda azienda) {
+			LocalDate dataAssunzione, String ruolo, Set<CompetenzaPersonale> competenze,
+			Set<CertificatoPersonale> certificati, Azienda azienda) {
 		super(id);
 		this.nome = nome;
 		this.cognome = cognome;
@@ -39,8 +59,11 @@ public class Dipendente extends JPAEntity {
 		this.stipendio = stipendio;
 		this.dataAssunzione = dataAssunzione;
 		this.ruolo = ruolo;
+		this.competenze = competenze;
+		this.certificati = certificati;
 		this.azienda = azienda;
 	}
+
 	public Dipendente() {
 		super();
 	}
@@ -92,5 +115,17 @@ public class Dipendente extends JPAEntity {
 	}
 	public void setAzienda(Azienda azienda) {
 		this.azienda = azienda;
+	}
+	public Set<CompetenzaPersonale> getCompetenze() {
+		return competenze;
+	}
+	public void setCompetenze(Set<CompetenzaPersonale> competenze) {
+		this.competenze = competenze;
+	}
+	public Set<CertificatoPersonale> getCertificati() {
+		return certificati;
+	}
+	public void setCertificati(Set<CertificatoPersonale> certificati) {
+		this.certificati = certificati;
 	}
 }
