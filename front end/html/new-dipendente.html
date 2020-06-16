@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../javascript/home.js"></script>
+    <link rel="stylesheet" href="../style/basic_style.css">
+
+    <title>Nuovo Dipendente</title>
+    <link rel="icon" type="image/png" href="../img/LOGO1.png">
+    <link rel="stylesheet" href="../style/add.css">
+</head>
+<body>
+    <div id="header">
+        <img src="../img/LOGO1.png">
+        <h1 class="italic">NOPLAY</h1>
+    </div>
+    <div id="form" class="box double-border">
+        <table class="add">
+            <caption class="title">AGGIUNGI</caption>
+            <tbody>
+                <tr>
+                    <td>Nome</td
+                        ><td><input type="text" id="nome"></td>
+                </tr>
+                <tr>
+                    <td>Congnome</td>
+                    <td><input type="text" id="congnome"></td>
+                </tr>
+                <tr>
+                    <td>Data di Nascita</td>
+                    <td><input type="date" id="ddn"></td>
+                </tr>
+                <tr>
+                    <td>Foto Profilo</td>
+                    <td><input type="file" nam id="pro-pic"></td>
+                </tr>
+                <tr><td colspan="2"><hr></td></tr>
+                <tr>
+                    <th>Azienda</th>
+                    <td>
+                        <select id="azienda">
+                            <option value="Azienda 1">Azienda 1</option>
+                            <option value="Azienda 2">Azienda 2</option>
+                        </select>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Stipendio</td>
+                    <td><input type="number" min=0 step="50" id="stipendio"></td>
+                </tr>
+                <tr>
+                    <td>Data Assunzione</td>
+                    <td><input type="date" id="ddn"></td>
+                </tr>
+                <tr>
+                    <td>Ruolo</td>
+                    <td>
+                        <select id="ruolo">
+                            <option value="programmatore">Programmatore</option>
+                            <option value="manager">Manager</option>
+                            <option value="tester">Tester</option>
+                            <option value="ricercatore">Ricercatore</option>
+                            <option value="indovino">Indovino</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td colspan="2"><hr></td></tr>
+                
+            </tbody>
+        </table>
+        <div>
+            <label for="competenze">Competenze</label>
+            <select id="competenze">
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="java">Java</option>
+                <option value="js">Javascript</option>
+                <option value="Manager">Manager</option>
+            </select>
+        </div>
+
+    </div>
+    
+</body>
+</html>
