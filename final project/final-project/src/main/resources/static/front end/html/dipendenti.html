@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../javascript/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../style/basic_style.css">
+
+    <title>Dipendenti</title>
+    <link rel="icon" type="image/png" href="../img/LOGO1.png">
+    <link rel="stylesheet" href="../style/dipendenti.css">
+    <script src="../javascript/dipendenti.js"></script>
+</head>
+<body>
+    <div id="header">
+        <img src="../img/LOGO1.png">
+        <h1 class="italic">NOPLAY</h1>
+    </div>
+
+    <div id="body">
+        <div id="dipendenti" class="box double-border">
+            <div class="title">
+                <h3>LISTA RISORSE INTERNE</h3>
+                <a id="add-btn" href="../html/new-dipendente.html"><button>+</button></a>
+                
+            </div>
+            <div class="scroll table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>Data di nascita</th>
+                            <th>Ruolo</th>
+                            <th>Azienda</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-dipendenti">
+                        <tr>
+                            <td>Nome 1</td>
+                            <td>Cognome 1</td>
+                            <td>2020-20-20</td>
+                            <td>Cazzeggiatore</td>
+                            <td>ALFA</td>
+                        </tr>
+                        <tr>
+                            <td>Nome 1</td>
+                            <td>Cognome 1</td>
+                            <td>2020-20-20</td>
+                            <td>Cazzeggiatore</td>
+                            <td>BETA</td>
+                        </tr>
+                        <tr>
+                            <td>Nome 1</td>
+                            <td>Cognome 1</td>
+                            <td>2020-20-20</td>
+                            <td>Cazzeggiatore</td>
+                            <td>GAMMA</td>
+                        </tr>
+                        <tr>
+                            <td>Nome 1</td>
+                            <td>Cognome 1</td>
+                            <td>2020-20-20</td>
+                            <td>Cazzeggiatore</td>
+                            <td>DELTA</td>
+                        </tr>
+                        <tr>
+                            <td>Nome 1</td>
+                            <td>Cognome 1</td>
+                            <td>2020-20-20</td>
+                            <td>Cazzeggiatore</td>
+                            <td>EPSILON</td>
+                        </tr>
+                        <tr>
+                            <td>Nome 1</td>
+                            <td>Cognome 1</td>
+                            <td>2020-20-20</td>
+                            <td>Cazzeggiatore</td>
+                            <td>ZETA</td>
+                        </tr>
+                        <tr>
+                            <td>Nome 1</td>
+                            <td>Cognome 1</td>
+                            <td>2020-20-20</td>
+                            <td>Cazzeggiatore</td>
+                            <td>ETA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    
+        <div id="detail" class="box double-border">
+            <div class="title">DETTAGLIO</div>
+            <div class="box-body">
+                <div id="col-1" class="datalist personal-data">
+                    <div id="picture-box" class="double-border">
+                            <img id="pro-pic" src="../img/LOGO1.png" alt="Profile Picture">
+                    </div>
+                    <div class="data">
+                        <h3>Dati Personali</h3>
+                        <div id="nome-cognome">Nome Cognome</div>
+                        <div id="ddn">Data di Nascita</div>
+                    </div>
+                </div>
+                <div id="col-2" class="datalist">
+                    <div id="job-data" class="datalist data">
+                        <h3 id="azienda">Azienda</h3>
+                        <div>Stipendio <span id="stipendio" class="value">€stipendio</span></div>
+                        <div>Data Assunzione<span id="data-assunzione" class="value"></span></div>
+                        <div>Ruolo<span id="ruolo" class="value"></span></div>
+                    </div>
+                    <div class="skill-data">
+                        <ul class="dropdown">
+                            <li><button id="competenze" class="dropbtn">Competenze</button></li>
+                            <ul id="lista-competenze" class="dropdown-content">
+                                <li>Q<span class="value">value</span></li>
+                                <li>W<span class="value">value</span></li>
+                                <li>E<span class="value">value</span></li>
+                                <li>R<span class="value">value</span></li>
+                                <li>T<span class="value">value</span></li>
+                                <li>Y<span class="value">value</span></li>
+                            </ul>
+                        </ul>
+                        <ul class="dropdown">
+                            <li><button id="certificati" class="dropbtn">Certificati</button></li>
+                            <ul id="lista-certificati" class="dropdown-content">
+                                <li>Q<span class="value">value</span></li>
+                                <li>W<span class="value">value</span></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
