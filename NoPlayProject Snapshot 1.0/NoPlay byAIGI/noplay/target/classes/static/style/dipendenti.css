@@ -1,0 +1,248 @@
+:root{
+    --main-gray: #47525E;
+}
+
+.box {
+    padding: 20px 35px;
+    width:600px;
+    height: 431px;
+}
+
+/* #dipendenti table {
+    table-layout: fixed;
+    background-color: whitesmoke;
+    border-collapse: collapse;
+    width: 100%;
+}
+#dipendenti table * {
+    border: thin solid black;
+}
+#dipendenti tr {
+    height: 30px;
+}
+#dipendenti thead th {
+    position: sticky;
+
+    
+    color: #ddd;
+    background-color: var(--main-gray);
+    border: 2px solid black;
+}
+#dipendenti div.table-box {
+    height: 200px;
+} */
+
+#dipendenti .title {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.table-box{
+    top: 10px;
+    width: 590px;
+    margin: auto;
+    background: #fff;
+    max-height: 350px;
+    overflow-y: auto;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.7);
+}
+#dipendenti table{
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+#dipendenti table thead th,
+#dipendenti table tbody td{
+    padding: 15px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+#dipendenti table thead th{
+    background-color: var(--main-gray);
+    color: #fff;
+    font-size: 16px;
+    position: sticky;
+    top: 0px;
+}
+
+#dipendenti table tbody td{
+    border-bottom: 1px solid black;
+}
+
+#add-btn {
+    position: absolute;
+    box-sizing: content-box;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+}
+#dipendenti .active {
+    text-decoration: underline blue;
+}
+
+
+#detail {
+    width:600px;
+    height: 431px;
+    
+    background-color: #dcdcdcf0;
+}
+#detail .title {
+    position: relative;
+    font-size: 30px;
+    margin: 10px auto 20px;
+
+}
+#detail .box-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+#detail .datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+#detail .skill-data {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 40%;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    margin: 5px auto;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-height: fit-content;
+    max-height: 120px;
+
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+.skill-data .dropdown-content {
+    overflow: scroll;
+}
+.dropdown-content::-webkit-scrollbar {
+    display: none;
+}
+.dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content li:hover {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+#detail .skill-data .content {
+    width: 100%;
+    border-radius: initial;
+}
+.skill-data ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#detail .personal-data {
+    justify-content: center;
+}
+#detail .skill-data > * {
+    margin: 2px;
+}
+
+#picture-box {
+    box-sizing: border-box;
+    max-width: 200px;
+    margin: 10px 20px;
+    background-color: white;
+}
+#picture-box img {
+    position: relative;
+    left: 3px;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+}
+.image-container {
+    height: 0;
+    padding: 0 0 100% 0;
+}
+.data{
+    background-color: whitesmoke;
+    margin: 10px;
+    padding: 7px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 3px 0px;
+}
+.data div { /* Sottolina il testo nei dati */
+    border-bottom: thin solid black;
+    padding-bottom: 1px;
+}
+#detail .double-border {
+    border-color: var(--main-gray);
+    border-radius: 10px;
+}
+#detail .double-border::before {
+    border-color: var(--main-gray);
+    border-radius: 5px;
+}
+#detail button {
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+}
+
+
+#body {
+    display: flex;
+    justify-content: space-around;
+}
+
+#job-data {
+    width: 200px;
+    height: 50%;
+}
+#job-data .value,
+.skill-data .value {
+    float: right;
+}

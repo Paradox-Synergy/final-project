@@ -1,0 +1,81 @@
+:root{
+    --main-gray: #47525E;
+}
+
+#body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    padding: 20px 35px;
+    width:600px;
+    height: 431px;
+}
+.box > .title {
+    height: 45px;
+    box-sizing: content-box;
+    margin: 5px;
+    font-size: large;
+}
+
+#aziende > .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#aziende table {
+    table-layout: auto;
+}
+#aziende .active {
+    text-decoration: underline blue;
+}
+
+#detail table {
+    table-layout: auto;
+}
+
+div.table-box{
+    top: 10px;
+    width: 590px;
+    margin: auto;
+    background: #fff;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.7);
+}
+.table-box > table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-box::-webkit-scrollbar {
+    display: none;
+}
+
+.box td {
+    padding: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 1px solid black;
+}
+.box th{
+    padding: 15px;
+    background-color: var(--main-gray);
+    color: #fff;
+    font-size: 16px;
+    position: sticky;
+    top: 0px;
+}
+
+#add-btn {
+    position: absolute;
+    box-sizing: content-box;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+
+    background-color: var(--main-gray);
+}
+
